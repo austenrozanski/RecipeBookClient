@@ -1,1 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #f1f1f1;
+  /*font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;*/
+  font-family: 'Overpass', serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.text-small {
+  font-size: 0.9rem;
+}
+
+.text-medium {
+  font-size: 1.05rem
+}
+
+.text-large {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.text-very-large {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.text-title-no-spacing {
+  font-size: 2.6rem;
+  font-weight: 300;
+}
+
+.text-subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.text-subtitle-2 {
+  font-size: 1.2rem;
+  font-weight: 200;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.width100 {
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.center {
+  margin: auto;
+  width: 60%;
+}
