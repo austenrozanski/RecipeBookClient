@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recipe',
@@ -67,8 +68,7 @@ export class RecipeComponent implements OnInit {
     {score: 4, review: "pretty good"},
     {score: 5, review: "really good"},
   ]
-
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
     this.http.get('http://localhost:5114/api/users').subscribe({
@@ -76,5 +76,9 @@ export class RecipeComponent implements OnInit {
       error: err => console.log(err),
       complete: () => console.log('Request completed')
     });
+  }
+
+  onClicked() {
+    this.router.navigate(['/recipe-browser']);
   }
 }

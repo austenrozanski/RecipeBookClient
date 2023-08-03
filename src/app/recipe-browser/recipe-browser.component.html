@@ -1,0 +1,143 @@
+<!-- Side bar -->
+<div class="sidenav text-small">
+
+  <div class="sidebar-icon-container sidebar-section">
+    <div class="sidebar-title">
+      <b>Recipe Browser</b>
+    </div>
+  </div>
+
+  <div class="input-group rounded">
+    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+    <span class="input-group-text border-0" id="search-addon">
+    <i class="bi bi-search"></i>
+  </span>
+  </div>
+
+  <div class="sidebar-divider padding-top-medium"></div>
+
+  <div class="sidebar-icon-container sidebar-section">
+    <div class="sidebar-title">
+      <b>Groups</b>
+    </div>
+    <div class="sidebar-section-content">
+
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <button class="dropdown-item" type="button">Action</button>
+          <button class="dropdown-item" type="button">Another action</button>
+          <button class="dropdown-item" type="button">Something else here</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="sidebar-divider padding-top-medium"></div>
+
+  <div class="sidebar-icon-container sidebar-section">
+    <div class="sidebar-title">
+      <b>Filters</b>
+    </div>
+    <div class="sidebar-toggle-switch-container">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Show Hearted Only</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="sidebar-divider padding-top-medium"></div>
+
+  <div class="sidebar-icon-container sidebar-section">
+    <div class="sidebar-title">
+      <b>Sort by</b>
+    </div>
+    <div class="sidebar-section-content">
+      <div><b>Name</b></div>
+      <div><b>Author</b></div>
+      <div><b>Total Time</b></div>
+      <div><b>Date Created</b></div>
+      <div><b>Date Last Modified</b></div>
+      <div><b>Hearted</b></div>
+      <div><b>Date Last Cooked</b></div>
+      <div><b>Rating</b></div>
+      <div><b># Reviews</b></div>
+      <div><b># Posts</b></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Main content -->
+<div class="main text-medium">
+
+  <!-- Main Content-->
+  <div class="container">
+    <div class="col">
+
+      <!-- Recipe main navigation -->
+      <div class="row main-nav-bar bg-white rounded padding-top-medium">
+        <ul class="nav nav-tabs nav nav-tabs nav-pills with-arrow lined flex-column flex-sm-row text-center" id="recipeMainTab" role="tablist">
+          <li class="nav-item flex-sm-fill" role="presentation">
+            <a class="nav-link text-uppercase font-weight-bold mr-sm-3 rounded-0 active" id="recipe-tab" data-bs-toggle="tab" data-bs-target="#recipe" type="button" role="tab" aria-controls="recipe" aria-selected="true">
+              All
+            </a>
+          </li>
+          <li class="nav-item flex-sm-fill" role="presentation">
+            <a class="nav-link text-uppercase font-weight-bold mr-sm-3 rounded-0" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab" aria-controls="description" aria-selected="false">
+              Saved
+            </a>
+          </li>
+          <li class="nav-item flex-sm-fill" role="presentation">
+            <a class="nav-link text-uppercase font-weight-bold mr-sm-3 rounded-0" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button" role="tab" aria-controls="reviews" aria-selected="false">
+              Friends
+            </a>
+          </li>
+          <li class="nav-item flex-sm-fill" role="presentation">
+            <a class="nav-link text-uppercase font-weight-bold mr-sm-3 rounded-0" id="history-tab" data-bs-toggle="tab" data-bs-target="#history" type="button" role="tab" aria-controls="history" aria-selected="false">
+              History
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="row main-content-body tab-content padding-top-medium" id="recipeMainTabContent">
+
+      </div>
+
+      <div class="row">
+        <div class="d-flex flex-row flex-wrap">
+          <div *ngFor="let recipe of recipes" class="padding-right-medium padding-bottom-medium">
+
+            <div class="card" style="width: 15rem;">
+              <a (click)="onClicked();" class="stretched-link"></a>
+              <div class="card-header text-center">
+                <h5>{{recipe.name}}</h5>
+                No Reviews
+              </div>
+              <img class="card-img-center" src="../assets/grilled-cheese.png" alt="Card image cap" width="250" height="250">
+              <div >
+                <button type="submit" class="btn btn-primary">
+                  <i class="bi bi-arrow-repeat"></i>
+                </button>
+                <button type="submit" class="btn btn-success">
+                  <i class="bi bi-plus"></i>
+                </button>
+                <button type="submit" class="btn btn-danger">
+                  <i class="bi bi-heart-fill"></i>
+                </button>
+                <button type="submit" class="btn btn-secondary">
+                  ...
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

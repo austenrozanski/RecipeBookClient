@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {AppRoutingModule} from "./app-routing.module";
 import { HomeComponent } from './home/home.component';
 import { RecipeComponent } from './recipe/recipe.component';
+import { RecipeBrowserComponent } from './recipe-browser/recipe-browser.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { RecipeComponent } from './recipe/recipe.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    RecipeComponent
+    RecipeComponent,
+    RecipeBrowserComponent
   ],
   bootstrap: [
     AppComponent,

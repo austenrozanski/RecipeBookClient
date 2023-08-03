@@ -8,7 +8,7 @@
   z-index: 2; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  //background-color: #92d5e7;
+//background-color: #92d5e7;
   background-color: $blue-100;
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 10px;
@@ -38,6 +38,10 @@
   padding-left: 5px;
 }
 
+.sidebar-toggle-switch-container {
+  padding-left: 45px !important;
+}
+
 .sidebar-divider {
   height: 10px;
 }
@@ -46,93 +50,34 @@
   margin-right: 5px;
 }
 
-/* Bottom right buttons */
-.bottom-right-button {
-  position: fixed;
-  z-index: 2;
-  bottom: 10px;
-  right: 20px;
-}
-
-
-/* Main content*/
+/* Main content panel */
 .main {
+  width: calc(100% - 250px);
   margin-left: 250px; /* Same as the width of the sidebar */
   color: #181818;
-}
-
-.recipe-container {
-}
-
-.main-nav-bar {
-  padding-bottom: 10px;
-}
-
-.main-nav-bar button {
-  height: 30px;
-  font-size: 1rem;
-}
-
-.gallery-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 100%;
-}
-
-.gallery-image-container {
-  border-radius: 10px;
 }
 
 .main-content-body {
   padding: 0px 15px;
 }
 
-.recipe-table {
-  border-spacing:0; /* Removes the cell spacing via CSS */
-  border-collapse: collapse;  /* Optional - if you don't want to have double border where cells touch */
+.card-img-center {
+  width: 100%;
 }
 
-.recipe-table tr td{
-  padding-top: 3px;
-  padding-bottom: 3px;
+.card .btn {
+  z-index: 2;
+  position: relative;
+  width: 25%;
+  border-radius: 0px;
 }
 
-.ingredients-table tr:first-of-type td {
-  border-top-style: solid;
+.card .btn:first-of-type {
+  border-bottom-left-radius: 5px;
 }
 
-.ingredients-table tr td {
-  border-bottom-style: solid;
-  border-color: #d3d3d3;
-}
-
-.ingredients-table tr td:first-of-type {
-  padding-right: 50px;
-}
-
-.ingredients-table tr td:nth-of-type(2) {
-  padding-right: 150px;
-}
-
-.instructions-table tr td {
-  padding-right: 8px;
-}
-
-.icon-container img {
-  margin-right: 10px;
-}
-
-.gallery-image-container img {
-  padding-right: 0px;
-}
-
-.recipe-section {
-  padding-bottom: 10px;
-}
-
-.recipe-table-divider {
-  height: 15px;
+.card .btn:nth-of-type(4) {
+  border-bottom-right-radius: 5px;
 }
 
 /*
@@ -202,17 +147,4 @@
 }
 .text-uppercase {
   letter-spacing: 0.1em;
-}
-
-.btn-very-sm {
-  @include button-size(0, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
-  height: 24px;
-}
-
-.card-body-small {
-  padding: 8px 10px !important;
-}
-
-.margin-right-small {
-  margin-right: 10px;
 }
