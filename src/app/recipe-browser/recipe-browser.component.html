@@ -18,19 +18,56 @@
 
   <div class="sidebar-icon-container sidebar-section">
     <div class="sidebar-title">
+      <b>Sort by</b>
+    </div>
+    <div class="sidebar-section-content">
+
+      <div ngbDropdown>
+        <button class="btn btn-primary drop-down-button-left" id="gfg2"
+                ngbDropdownToggle>
+          Name
+        </button>
+        <div ngbDropdownMenu="gfg2">
+          <button ngbDropdownItem>Name</button>
+          <button ngbDropdownItem>Author</button>
+          <button ngbDropdownItem>Total Time</button>
+          <button ngbDropdownItem>Date Created</button>
+          <button ngbDropdownItem>Hearted</button>
+          <button ngbDropdownItem>Date Last Cooked</button>
+          <button ngbDropdownItem>Rating</button>
+          <button ngbDropdownItem># Reviews</button>
+          <button ngbDropdownItem># Posts</button>
+          <button ngbDropdownItem>Date Last Modified</button>
+        </div>
+        <button type="submit" class="btn btn-outline-secondary drop-down-button-right">
+          <i class="bi bi-arrow-up"></i>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="sidebar-divider padding-top-medium"></div>
+
+  <div class="sidebar-icon-container sidebar-section">
+    <div class="sidebar-title">
       <b>Groups</b>
     </div>
     <div class="sidebar-section-content">
 
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
+      <div ngbDropdown>
+        <button class="btn btn-primary drop-down-button-left" id="gfg"
+                ngbDropdownToggle>
+          None
         </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-          <button class="dropdown-item" type="button">Action</button>
-          <button class="dropdown-item" type="button">Another action</button>
-          <button class="dropdown-item" type="button">Something else here</button>
+        <div ngbDropdownMenu="gfg">
+          <button ngbDropdownItem>Mains</button>
+          <button ngbDropdownItem>Sides</button>
+          <button ngbDropdownItem>Drinks</button>
         </div>
+        <button type="submit" class="btn btn-outline-secondary drop-down-button-right">
+          <i class="bi bi-x"></i>
+        </button>
       </div>
 
     </div>
@@ -47,26 +84,6 @@
         <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
         <label class="form-check-label" for="flexSwitchCheckDefault">Show Hearted Only</label>
       </div>
-    </div>
-  </div>
-
-  <div class="sidebar-divider padding-top-medium"></div>
-
-  <div class="sidebar-icon-container sidebar-section">
-    <div class="sidebar-title">
-      <b>Sort by</b>
-    </div>
-    <div class="sidebar-section-content">
-      <div><b>Name</b></div>
-      <div><b>Author</b></div>
-      <div><b>Total Time</b></div>
-      <div><b>Date Created</b></div>
-      <div><b>Date Last Modified</b></div>
-      <div><b>Hearted</b></div>
-      <div><b>Date Last Cooked</b></div>
-      <div><b>Rating</b></div>
-      <div><b># Reviews</b></div>
-      <div><b># Posts</b></div>
     </div>
   </div>
 

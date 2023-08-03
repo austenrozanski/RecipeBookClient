@@ -50,6 +50,17 @@
   margin-right: 5px;
 }
 
+.drop-down-button-left {
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+  width: 125px;
+}
+
+.drop-down-button-right {
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+}
+
 /* Main content panel */
 .main {
   width: calc(100% - 250px);
