@@ -46,12 +46,20 @@
   margin-right: 5px;
 }
 
+.back-button {
+  width: 125px;
+}
+
 /* Bottom right buttons */
-.bottom-right-button {
+.bottom-right-button-container {
   position: fixed;
   z-index: 2;
   bottom: 10px;
   right: 20px;
+}
+
+.bottom-right-button {
+  width: 125px;
 }
 
 
