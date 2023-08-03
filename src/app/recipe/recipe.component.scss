@@ -26,6 +26,13 @@
   padding-top: 10px;
 }
 
+.bottom-right-button {
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 2; /* Stay on top */
+  bottom: 10px; /* Stay at the top */
+  right: 20px;
+}
+
 .gallery-img {
   display: block;
   margin-left: auto;
