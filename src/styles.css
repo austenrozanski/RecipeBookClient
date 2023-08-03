@@ -25,21 +25,18 @@ body {
   font-weight: 300;
 }
 
-.text-title-no-spacing {
+.text-title {
   font-size: 2.6rem;
-  font-weight: 300;
 }
 
 .text-subtitle {
   font-size: 1.5rem;
-  font-weight: 300;
   padding-bottom: 10px;
   padding-top: 10px;
 }
 
 .text-subtitle-2 {
   font-size: 1.2rem;
-  font-weight: 200;
   padding-bottom: 5px;
   padding-top: 5px;
 }
@@ -56,3 +53,50 @@ body {
   margin: auto;
   width: 60%;
 }
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.table td.fit,
+.table th.fit {
+  white-space: nowrap;
+  width: 1%;
+}
+
+.padding-right-small {
+  padding-right: 5px !important;
+}
+
+.padding-right-medium {
+  padding-right: 15px !important;
+}
+
+.padding-right-large{
+  padding-right: 50px !important;
+}
+
+.padding-top-small {
+  padding-top: 10px !important;
+}
+
+.padding-top-medium {
+  padding-top: 15px !important;
+}
+
+.padding-top-large {
+  padding-top: 50px !important;
+}
+
+.padding-bottom-small {
+  padding-bottom: 5px !important;
+}
+
+.padding-bottom-medium {
+  padding-bottom: 15px !important;
+}
+
+.padding-bottom-large {
+  padding-bottom: 50px !important;
+}
+

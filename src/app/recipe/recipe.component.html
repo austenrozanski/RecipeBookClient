@@ -1,0 +1,180 @@
+
+<!-- Side bar -->
+<div class="sidenav text-small">
+
+  <div class="sidebar-icon-container sidebar-section">
+    <div class="sidebar-title">
+      <img ngSrc="../assets/left-arrow.png" alt="image of food" height="20" width="20">
+      <b>Back</b>
+    </div>
+  </div>
+
+  <div class="sidebar-divider"></div>
+
+  <div class="sidebar-icon-container sidebar-section">
+    <div class="sidebar-title">
+      <img ngSrc="../assets/camera.png" alt="image of food" height="25" width="25">
+      <b>Gallery</b>
+    </div>
+    <div class="">
+      <img class="img-thumbnail" ngSrc="../assets/grilled-cheese.png" alt="image of food" height="200" width="200">
+    </div>
+  </div>
+
+  <div class="sidebar-icon-container sidebar-section">
+    <div class="sidebar-title">
+      <img ngSrc="../assets/clock.png" alt="image of food" height="20" width="20">
+      <b>Time</b>
+    </div>
+    <div class="sidebar-section-content">
+      <div><b>Prep:</b> 10 min</div>
+      <div><b>Cook:</b> 10 min</div>
+      <div><b>Total:</b> 20 min</div>
+    </div>
+  </div>
+
+  <div class="sidebar-icon-container sidebar-section">
+    <div class="sidebar-title">
+      <img ngSrc="../assets/info.png" alt="image of food" height="20" width="20">
+      <b>Additional Info</b>
+    </div>
+    <div class="sidebar-section-content">
+      <div><b>Author: </b>Austen Rozanski</div>
+      <div><b>Link: </b> </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Page content -->
+<div class="main text-medium">
+
+  <!-- Title -->
+  <div class="padding-bottom-medium padding-top-medium width100">
+      <div class="text-title width100 text-center"><b>Grilled Cheese</b></div>
+      <div class="width100 text-center">by Austen Rozanski</div>
+  </div>
+
+  <!-- Main Content with nav bar -->
+  <div class="container">
+    <div class="col">
+      <!-- Recipe main navigation -->
+      <div class="row main-nav-bar">
+        <ul class="nav nav-tabs" id="recipeMainTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="recipe-tab" data-bs-toggle="tab" data-bs-target="#recipe" type="button" role="tab" aria-controls="recipe" aria-selected="true">
+              Recipe
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab" aria-controls="description" aria-selected="false">
+              Bio and Description
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button" role="tab" aria-controls="reviews" aria-selected="false">
+              Reviews
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="history-tab" data-bs-toggle="tab" data-bs-target="#history" type="button" role="tab" aria-controls="history" aria-selected="false">
+              History
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Content body -->
+      <div class="row main-content-body tab-content" id="recipeMainTabContent">
+
+        <!-- Recipe content -->
+        <div class="container tab-pane fade show active" id="recipe" role="tabpanel" aria-labelledby="recipe-tab">
+          <div class="row">
+            <!-- Ingredients -->
+            <div class="col-12 recipe-section">
+              <!-- Title -->
+              <div class="text-subtitle icon-container">
+                <img ngSrc="../assets/grocery.png" alt="image of food" height="32" width="32">
+                <b>Ingredients</b>
+              </div>
+              <!-- Content -->
+              <div *ngFor="let ingredientSection of ingredientSections">
+                <div class="text-subtitle-2" >
+                  <b>{{ingredientSection.name}}</b>
+                </div>
+                <table class="table ">
+                  <thead>
+                  <tr>
+                    <th colspan="12" scope="col" class="no-padding"></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let ingredient of ingredientSection.ingredients">
+                    <td class="fit padding-right-large">{{ingredient.name}}</td>
+                    <td><b>{{ingredient.quantity}}</b> {{ingredient.quantityType}}</td>
+                    <td class="text-end padding-right-large">
+                      Add to
+                      <img ngSrc="../assets/shopping-list.png" alt="image of food" height="16" width="16">
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- Instructions -->
+            <div class="col-12 recipe-section">
+              <!-- Title -->
+              <div class="text-subtitle icon-container">
+                <img ngSrc="../assets/cooking.png" alt="image of food" height="32" width="32">
+                <b>Instructions</b>
+              </div>
+              <!-- Content -->
+              <div *ngFor="let instructionSection of instructionSections">
+                <div class="text-subtitle-2">
+                  <b>{{instructionSection.name}}</b>
+                </div>
+                <div *ngFor="let instruction of instructionSection.instructions">
+                  <b>{{instruction.index}}.</b> {{instruction.description}}
+                  <div *ngFor="let stepTimer of instruction.stepTimers">
+                    <td><button>{{stepTimer.name}} | Start | {{stepTimer.timeInSeconds}}</button></td>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Additional Information -->
+            <div class="col-12 recipe-section">
+              <div class="text-subtitle icon-container">
+                <img ngSrc="../assets/chef.png" alt="image of food" height="32" width="32">
+                <b>Tips and Tricks</b>
+              </div>
+              <div>
+                None.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Description and bio content -->
+        <div class="tab-pane fade" id="description" role="tabpanel" aria-labelledby="description-tab">
+          description...
+        </div>
+
+        <!-- Reviews content -->
+        <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+          reviews...
+        </div>
+
+        <!-- History content -->
+        <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="history-tab">
+          history...
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ul>
+  <li *ngFor="let user of users">
+    {{user.id}} - {{user.userName}}
+  </li>
+</ul>
