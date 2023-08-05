@@ -1,13 +1,13 @@
-import {Component, OnInit} from '@angular/core';
+import { Component } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import { Router } from '@angular/router';
+import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-recipe',
-  templateUrl: './recipe.component.html',
-  styleUrls: ['./recipe.component.scss']
+  selector: 'app-recipe-view',
+  templateUrl: './recipe-view.component.html',
+  styleUrls: ['./recipe-view.component.scss']
 })
-export class RecipeComponent implements OnInit {
+export class RecipeViewComponent {
   title = 'recipe-book-client';
   users: any;
 
@@ -29,7 +29,7 @@ export class RecipeComponent implements OnInit {
         {name: "Butter", quantity: "2", quantityType: "tbsp"},
         {name: "American Cheese", quantity: "4", quantityType: "slices"},
       ]},
-    ];
+  ];
 
   instructionSections: any = [
     {name: "Sandwich", instructions: [

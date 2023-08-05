@@ -1,0 +1,32 @@
+<div class="col-12 recipe-section">
+  <!-- Title -->
+  <div class="text-subtitle icon-container">
+    <img ngSrc="../assets/grocery.png" alt="image of food" height="32" width="32">
+    <b>Ingredients</b>
+  </div>
+  <!-- Content -->
+  <div *ngFor="let ingredientSection of ingredientSections">
+    <div class="text-subtitle-2" >
+      <b>{{ingredientSection.name}}</b>
+    </div>
+    <table class="table table-sm">
+      <thead>
+      <tr>
+        <th colspan="12" scope="col" class="no-padding"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let ingredient of ingredientSection.ingredients">
+        <td class="fit padding-right-large">{{ingredient.name}}</td>
+        <td><b>{{ingredient.quantity}}</b> {{ingredient.quantityType}}</td>
+        <td class="text-end padding-right-large">
+          <button class="btn btn-very-sm">
+            Add to cart
+            <img ngSrc="../assets/cart.png" alt="image of food" height="16" width="16">
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

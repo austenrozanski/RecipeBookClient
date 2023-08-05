@@ -1,0 +1,43 @@
+<div class="sidenav text-small">
+
+  <div class="sidebar-icon-container sidebar-section">
+    <div class="sidebar-title">
+      <button type="submit" class="btn btn-primary back-button" (click)="onBack();">
+        <i class="bi bi-caret-left-fill"></i> Back
+      </button>
+    </div>
+  </div>
+
+  <div class="sidebar-divider"></div>
+
+  <div class="sidebar-icon-container sidebar-section">
+    <div class="sidebar-title">
+      <b>Gallery</b>
+    </div>
+    <div class="">
+      <img class="img-thumbnail" ngSrc="../assets/grilled-cheese.png" alt="image of food" height="200" width="200">
+    </div>
+  </div>
+
+  <div class="sidebar-icon-container sidebar-section">
+    <div class="sidebar-title">
+      <b>Time</b>
+    </div>
+    <div class="sidebar-section-content">
+      <div><b>Prep:</b> 10 min</div>
+      <div><b>Cook:</b> 10 min</div>
+      <div><b>Total:</b> 20 min</div>
+    </div>
+  </div>
+
+  <div class="sidebar-icon-container sidebar-section">
+    <div class="sidebar-title">
+      <b>Additional Info</b>
+    </div>
+    <div class="sidebar-section-content">
+      <div><b>Author: </b>{{author}}</div>
+      <div><b>Link: </b>{{link}}</div>
+    </div>
+  </div>
+
+</div>

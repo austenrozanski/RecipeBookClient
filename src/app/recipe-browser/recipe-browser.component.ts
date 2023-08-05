@@ -17,7 +17,7 @@ export class RecipeBrowserComponent {
   ]
   constructor(private http: HttpClient, private router: Router) {}
   onClicked() {
-    this.router.navigate(['/recipe']);
+    this.router.navigate(['/recipe-view']);
   }
 
   onClickedNewRecipe() {

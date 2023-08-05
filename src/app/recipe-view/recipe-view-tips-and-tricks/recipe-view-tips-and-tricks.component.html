@@ -1,0 +1,15 @@
+<div class="col-12 recipe-section">
+  <div class="text-subtitle icon-container">
+    <img ngSrc="../assets/chef.png" alt="image of food" height="32" width="32">
+    <b>Tips and Tricks</b>
+  </div>
+  <!-- Content -->
+  <div *ngFor="let section of tipsAndTricksSections" class="padding-bottom-small">
+    <div class="text-subtitle-2">
+      <b>{{section.name}}</b>
+    </div>
+    <div class="p-1">
+      {{section.content}}
+    </div>
+  </div>
+</div>

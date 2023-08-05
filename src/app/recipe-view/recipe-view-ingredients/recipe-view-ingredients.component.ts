@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-recipe-ingredient-edit',
-  templateUrl: './recipe-ingredient-edit.component.html',
-  styleUrls: ['./recipe-ingredient-edit.component.css']
+  selector: 'app-recipe-view-ingredients',
+  templateUrl: './recipe-view-ingredients.component.html',
+  styleUrls: ['./recipe-view-ingredients.component.scss']
 })
-export class RecipeIngredientEditComponent {
+export class RecipeViewIngredientsComponent {
   ingredientSections: any = [
     {name: "Sandwich", ingredients: [
         {name: "Bread", quantity: "4", quantityType: "slices"},

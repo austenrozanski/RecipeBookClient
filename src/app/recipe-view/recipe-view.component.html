@@ -1,5 +1,5 @@
 <!-- Side bar -->
-<app-recipe-edit-sidebar></app-recipe-edit-sidebar>
+<app-recipe-view-sidebar></app-recipe-view-sidebar>
 
 <!-- Page content -->
 <div class="main text-medium">
@@ -27,32 +27,50 @@
               Description
             </a>
           </li>
+          <li class="nav-item flex-sm-fill" role="presentation">
+            <a class="nav-link text-uppercase font-weight-bold mr-sm-3 rounded-0" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button" role="tab" aria-controls="reviews" aria-selected="false">
+              Reviews
+            </a>
+          </li>
+          <li class="nav-item flex-sm-fill" role="presentation">
+            <a class="nav-link text-uppercase font-weight-bold mr-sm-3 rounded-0" id="history-tab" data-bs-toggle="tab" data-bs-target="#history" type="button" role="tab" aria-controls="history" aria-selected="false">
+              History
+            </a>
+          </li>
         </ul>
       </div>
 
       <!-- Content body -->
       <div class="row main-content-body tab-content padding-top-medium" id="recipeMainTabContent">
 
-        <!-- Recipe content -->
+        <!-- Recipe Tab Content -->
         <div class="container tab-pane fade show active" id="recipe" role="tabpanel" aria-labelledby="recipe-tab">
           <div class="row">
-
             <!-- Ingredients -->
-            <app-recipe-edit-ingredients></app-recipe-edit-ingredients>
+            <app-recipe-view-ingredients></app-recipe-view-ingredients>
 
             <!-- Instructions -->
-            <app-recipe-edit-instructions></app-recipe-edit-instructions>
+            <app-recipe-view-instructions></app-recipe-view-instructions>
 
             <!-- Tips and Tricks -->
-            <app-recipe-edit-tips-and-tricks></app-recipe-edit-tips-and-tricks>
+            <app-recipe-view-tips-and-tricks></app-recipe-view-tips-and-tricks>
           </div>
         </div>
 
-        <!-- Description content -->
+        <!-- Description Tab Content -->
         <div class="tab-pane fade" id="description" role="tabpanel" aria-labelledby="description-tab">
-          <app-recipe-edit-description></app-recipe-edit-description>
+          <app-recipe-view-description></app-recipe-view-description>
         </div>
 
+        <!-- Reviews content -->
+        <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+          <app-recipe-view-reviews></app-recipe-view-reviews>
+        </div>
+
+        <!-- History content -->
+        <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="history-tab">
+          <app-recipe-view-history></app-recipe-view-history>
+        </div>
       </div>
     </div>
   </div>
@@ -60,10 +78,11 @@
 
 <!-- Bottom-right action buttons -->
 <div class="bottom-right-button-container">
-  <button type="submit" class="btn btn-danger bottom-right-button margin-right-small">
-    <i class="bi bi-x"></i> Cancel
+  <button type="submit" class="btn btn-primary bottom-right-button margin-right-small">
+    <i class="bi bi-pencil"></i> Edit
   </button>
   <button type="submit" class="btn btn-success bottom-right-button">
-    <i class="bi bi-save"></i> Save
+    <img ngSrc="../assets/cooking-tools.png" alt="image of food" height="25" width="25" class="margin-right-small">
+    Post
   </button>
 </div>

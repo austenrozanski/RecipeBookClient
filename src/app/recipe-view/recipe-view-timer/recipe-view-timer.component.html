@@ -1,0 +1,23 @@
+<div class="card" style="width: 15rem;">
+  <div class="card-body card-body-small">
+    <div class="card-title">
+      <div class="text-center">
+        {{name}}
+      </div>
+      <div>
+        <button class="btn btn-light" style="width: 10.4rem;">
+          <img ngSrc="../assets/play.png" alt="image of food" height="25" width="25" class="margin-right-small">
+          0:{{timeInSeconds}}
+        </button>
+        <button class="btn btn-light">
+          <img ngSrc="../assets/stop.png" alt="image of food" height="25" width="25">
+        </button>
+      </div>
+    </div>
+    <div class="card-text">
+      <div class="progress" style="height: 5px;">
+        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </div>
+  </div>
+</div>

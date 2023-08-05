@@ -1,0 +1,30 @@
+<div class="col-12 recipe-section">
+  <!-- Title -->
+  <div class="text-subtitle icon-container">
+    <img ngSrc="../assets/cooking.png" alt="image of food" height="32" width="32">
+    <b>Instructions</b>
+  </div>
+  <!-- Content -->
+  <div *ngFor="let instructionSection of instructionSections" class="padding-bottom-small">
+    <div class="text-subtitle-2">
+      <b>{{instructionSection.name}}</b>
+    </div>
+    <div *ngFor="let instruction of instructionSection.instructions" class="container">
+      <div class="col">
+        <div class="row">
+          <div class="d-flex flex-row">
+            <div class="p-1 index-col"><b>{{instruction.index}}.</b></div>
+            <div class="p-1">{{instruction.description}}</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="d-flex flex-row">
+            <div *ngFor="let stepTimer of instruction.stepTimers" class="padding-right-small">
+              <app-recipe-view-timer></app-recipe-view-timer>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
