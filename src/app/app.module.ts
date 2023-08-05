@@ -9,6 +9,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import { HomeComponent } from './home/home.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { RecipeBrowserComponent } from './recipe-browser/recipe-browser.component';
+import { RecipeEditComponent } from './recipe-edit/recipe-edit.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { RecipeBrowserComponent } from './recipe-browser/recipe-browser.componen
     AppComponent,
     HomeComponent,
     RecipeComponent,
-    RecipeBrowserComponent
+    RecipeBrowserComponent,
+    RecipeEditComponent
   ],
   bootstrap: [
     AppComponent,

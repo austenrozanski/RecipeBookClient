@@ -19,4 +19,8 @@ export class RecipeBrowserComponent {
   onClicked() {
     this.router.navigate(['/recipe']);
   }
+
+  onClickedNewRecipe() {
+    this.router.navigate(['/recipe-edit']);
+  }
 }

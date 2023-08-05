@@ -4,12 +4,14 @@ import {RouterModule, Routes} from "@angular/router";
 import {HomeComponent} from "./home/home.component";
 import {RecipeComponent} from "./recipe/recipe.component";
 import {RecipeBrowserComponent} from "./recipe-browser/recipe-browser.component";
+import {RecipeEditComponent} from "./recipe-edit/recipe-edit.component";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'recipe', component: RecipeComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'recipe-browser', component: RecipeBrowserComponent }
+  { path: 'recipe-browser', component: RecipeBrowserComponent },
+  { path: 'recipe-edit', component: RecipeEditComponent }
 ]
 
 @NgModule({

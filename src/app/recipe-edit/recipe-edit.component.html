@@ -49,8 +49,8 @@
 
   <!-- Title -->
   <div class="padding-bottom-medium padding-top-medium width100">
-      <div class="text-title width100 text-center"><b>{{recipeName}}</b></div>
-      <div class="width100 text-center">by {{author}}</div>
+    <div class="text-title width100 text-center"><b>{{recipeName}}</b></div>
+    <div class="width100 text-center">by {{author}}</div>
   </div>
 
   <!-- Main Content with nav bar -->
@@ -97,30 +97,70 @@
                 <b>Ingredients</b>
               </div>
               <!-- Content -->
-              <div *ngFor="let ingredientSection of ingredientSections">
-                <div class="text-subtitle-2" >
-                  <b>{{ingredientSection.name}}</b>
-                </div>
-                <table class="table table-sm">
-                  <thead>
-                  <tr>
-                    <th colspan="12" scope="col" class="no-padding"></th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr *ngFor="let ingredient of ingredientSection.ingredients">
-                    <td class="fit padding-right-large">{{ingredient.name}}</td>
-                    <td><b>{{ingredient.quantity}}</b> {{ingredient.quantityType}}</td>
-                    <td class="text-end padding-right-large">
-                      <button class="btn btn-very-sm">
-                        Add to cart
-                        <img ngSrc="../assets/cart.png" alt="image of food" height="16" width="16">
+              <div *ngFor="let ingredientSection of ingredientSections; first as isFirstSection; last as isLastSection" class="padding-bottom-medium">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="d-flex flex-row flex-wrap">
+                      <div class="input-group input-group-lg rounded section-name-input-container margin-right-small">
+                        <input type="search" class="form-control rounded" value="{{ingredientSection.name}}" placeholder="Group Name (optional)" aria-label="Search" aria-describedby="search-addon"/>
+                      </div>
+                      <button *ngIf="!isLastSection" class="btn btn-lg btn-secondary margin-right-small">
+                        <i class="bi bi-arrow-down"></i>
                       </button>
-                    </td>
-                  </tr>
-                  </tbody>
-                </table>
+                      <button *ngIf="!isFirstSection" class="btn btn-lg btn-secondary margin-right-small">
+                        <i class="bi bi-arrow-up"></i>
+                      </button>
+                      <button class="btn btn-lg btn-danger margin-right-small">
+                        <i class="bi bi-x"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <table class="table table-sm table-borderless">
+                      <thead>
+                      <tr>
+                        <th colspan="12" scope="col" class="no-padding"></th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr *ngFor="let ingredient of ingredientSection.ingredients">
+                        <td>
+                          <div class="input-group rounded">
+                            <input type="search" class="form-control rounded" value="{{ingredient.name}}" placeholder="Ingredient" aria-label="Search" aria-describedby="search-addon" />
+                          </div>
+                        </td>
+                        <td>
+                          <div class="input-group rounded">
+                            <input type="search" class="form-control rounded" value="{{ingredient.quantity}} {{ingredient.quantityType}}" placeholder="Quantity" aria-label="Search" aria-describedby="search-addon" />
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-danger margin-right-medium">
+                            <i class="bi bi-x"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <button class="btn btn-primary">
+                            <i class="bi bi-plus"></i> Add Ingredient
+                          </button>
+                        </td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                </div>
+
               </div>
+
+              <button class="btn btn-primary">
+                <i class="bi bi-plus"></i> Add Group
+              </button>
+
             </div>
             <!-- Instructions -->
             <div class="col-12 recipe-section">
@@ -223,12 +263,11 @@
 </div>
 
 <div class="bottom-right-button-container">
-  <button type="submit" class="btn btn-primary bottom-right-button margin-right-small">
-    <i class="bi bi-pencil"></i> Edit
+  <button type="submit" class="btn btn-danger bottom-right-button margin-right-small">
+    <i class="bi bi-x"></i> Cancel
   </button>
   <button type="submit" class="btn btn-success bottom-right-button">
-    <img ngSrc="../assets/cooking-tools.png" alt="image of food" height="25" width="25" class="margin-right-small">
-    Post
+    <i class="bi bi-save"></i> Save
   </button>
 </div>
 
