@@ -136,7 +136,7 @@
 }
 
 .recipe-section {
-  padding-bottom: 10px;
+  padding-bottom: 40px;
 }
 
 .recipe-table-divider {
@@ -145,6 +145,21 @@
 
 .section-name-input-container {
   max-width: 300px;
+}
+
+.ingredient-input-container {
+  max-width: 500px;
+}
+
+.ingredient-input-container input{
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+
+.new-step-button-container {
+  width: 150px;
+  padding-left: 12px;
+  padding-bottom: 20px !important;
 }
 
 /*
@@ -189,6 +204,16 @@
 
 .index-col {
   min-width: 29px;
+}
+
+.index-col-instruction-input {
+  min-width: 29px;
+}
+
+.index-col-instruction-input span {
+  border-bottom-right-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  height: 100%;
 }
 
 /* lined tabs */
