@@ -81,4 +81,8 @@ export class RecipeEditComponent {
   onClicked() {
     this.router.navigate(['/recipe-browser']);
   }
+
+  onTestOutput() {
+    console.log(this.ingredientSections);
+  }
 }

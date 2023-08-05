@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { RecipeBrowserComponent } from './recipe-browser/recipe-browser.component';
 import { RecipeEditComponent } from './recipe-edit/recipe-edit.component';
+import { RecipeIngredientEditComponent } from './recipe-ingredient-edit/recipe-ingredient-edit.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import { RecipeEditComponent } from './recipe-edit/recipe-edit.component';
     HomeComponent,
     RecipeComponent,
     RecipeBrowserComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    RecipeIngredientEditComponent
   ],
   bootstrap: [
     AppComponent,
