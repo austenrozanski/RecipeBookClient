@@ -4,12 +4,12 @@
     <b>Tips and Tricks</b>
   </div>
   <!-- Content -->
-  <div *ngFor="let section of tipsAndTricksSections" class="padding-bottom-small">
+  <div *ngFor="let group of tipsAndTricksGroups" class="padding-bottom-small">
     <div class="text-subtitle-2">
-      <b>{{section.name}}</b>
+      <b>{{group.title}}</b>
     </div>
     <div class="p-1">
-      {{section.content}}
+      {{group.body}}
     </div>
   </div>
 </div>

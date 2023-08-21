@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-recipe-view-ingredients',
@@ -6,6 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./recipe-view-ingredients.component.scss']
 })
 export class RecipeViewIngredientsComponent {
+
+  @Input() ingredientGroups: any =
+    [
+      {
+        name: "",
+        ingredients: [
+          {
+            name: "",
+            quantity: null,
+            quantityType: ""
+          }
+        ]
+      }
+    ];
+
   ingredientSections: any = [
     {name: "Sandwich", ingredients: [
         {name: "Bread", quantity: "4", quantityType: "slices"},

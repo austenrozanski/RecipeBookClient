@@ -131,7 +131,7 @@
           <div *ngFor="let recipe of recipes" class="padding-right-medium padding-bottom-medium">
 
             <div class="card" style="width: 15rem;">
-              <a (click)="onClicked();" class="stretched-link"></a>
+              <a (click)="onRecipeClicked(recipe.id);" class="stretched-link"></a>
               <div class="card-header text-center">
                 <h5>{{recipe.name}}</h5>
                 No Reviews

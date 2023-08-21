@@ -5,9 +5,9 @@
     <b>Ingredients</b>
   </div>
   <!-- Content -->
-  <div *ngFor="let ingredientSection of ingredientSections">
+  <div *ngFor="let ingredientGroup of ingredientGroups">
     <div class="text-subtitle-2" >
-      <b>{{ingredientSection.name}}</b>
+      <b>{{ingredientGroup.name}}</b>
     </div>
     <table class="table table-sm">
       <thead>
@@ -16,7 +16,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let ingredient of ingredientSection.ingredients">
+      <tr *ngFor="let ingredient of ingredientGroup.ingredients">
         <td class="fit padding-right-large">{{ingredient.name}}</td>
         <td><b>{{ingredient.quantity}}</b> {{ingredient.quantityType}}</td>
         <td class="text-end padding-right-large">

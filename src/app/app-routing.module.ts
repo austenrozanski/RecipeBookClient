@@ -8,7 +8,7 @@ import {RecipeViewComponent} from "./recipe-view/recipe-view.component";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'recipe-view', component: RecipeViewComponent },
+  { path: 'recipe-view/:id', component: RecipeViewComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'recipe-browser', component: RecipeBrowserComponent },
   { path: 'recipe-edit', component: RecipeEditComponent }

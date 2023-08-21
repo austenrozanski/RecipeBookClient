@@ -1,13 +1,19 @@
 <!-- Side bar -->
-<app-recipe-view-sidebar></app-recipe-view-sidebar>
+<app-recipe-view-sidebar
+  [author]="recipe.author"
+  [link]="recipe.sourceUrl"
+  [prepTimeInSeconds]="recipe.prepTimeSeconds"
+  [cookTimeInSeconds]="recipe.cookTimeSeconds"
+  [totalTimeInSeconds]="recipe.totalTimeSeconds"
+></app-recipe-view-sidebar>
 
 <!-- Page content -->
 <div class="main text-medium">
 
   <!-- Title -->
   <div class="padding-bottom-medium padding-top-medium width100">
-    <div class="text-title width100 text-center"><b>{{recipeName}}</b></div>
-    <div class="width100 text-center">by {{author}}</div>
+    <div class="text-title width100 text-center"><b>{{recipe.name}}</b></div>
+    <div class="width100 text-center">by {{recipe.author}}</div>
   </div>
 
   <!-- Main Content with nav bar -->
@@ -47,19 +53,19 @@
         <div class="container tab-pane fade show active" id="recipe" role="tabpanel" aria-labelledby="recipe-tab">
           <div class="row">
             <!-- Ingredients -->
-            <app-recipe-view-ingredients></app-recipe-view-ingredients>
+            <app-recipe-view-ingredients [ingredientGroups]="recipe.ingredientGroups"></app-recipe-view-ingredients>
 
             <!-- Instructions -->
-            <app-recipe-view-instructions></app-recipe-view-instructions>
+            <app-recipe-view-instructions [instructionGroups]="recipe.instructionGroups"></app-recipe-view-instructions>
 
             <!-- Tips and Tricks -->
-            <app-recipe-view-tips-and-tricks></app-recipe-view-tips-and-tricks>
+            <app-recipe-view-tips-and-tricks [tipsAndTricksGroups]="recipe.tipsAndTricksGroups"></app-recipe-view-tips-and-tricks>
           </div>
         </div>
 
         <!-- Description Tab Content -->
         <div class="tab-pane fade" id="description" role="tabpanel" aria-labelledby="description-tab">
-          <app-recipe-view-description></app-recipe-view-description>
+          <app-recipe-view-description [descriptionGroups]="recipe.descriptionGroups"></app-recipe-view-description>
         </div>
 
         <!-- Reviews content -->

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-recipe-view-instructions',
@@ -6,6 +6,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./recipe-view-instructions.component.scss']
 })
 export class RecipeViewInstructionsComponent {
+
+  @Input() instructionGroups: any =
+    [
+      {
+        name: "",
+        instructions: [
+          {
+            description: "",
+            timers: [
+              {
+                name: "",
+                totalTimeInSeconds: 0
+              }
+            ]
+          }
+        ]
+      }
+    ];
+
   instructionSections: any = [
     {name: "Sandwich", instructions: [
         {index: 1, description: "Melt butter in microwave."},

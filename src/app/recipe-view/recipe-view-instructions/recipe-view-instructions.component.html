@@ -5,21 +5,21 @@
     <b>Instructions</b>
   </div>
   <!-- Content -->
-  <div *ngFor="let instructionSection of instructionSections" class="padding-bottom-small">
+  <div *ngFor="let instructionGroup of instructionGroups" class="padding-bottom-small">
     <div class="text-subtitle-2">
-      <b>{{instructionSection.name}}</b>
+      <b>{{instructionGroup.name}}</b>
     </div>
-    <div *ngFor="let instruction of instructionSection.instructions" class="container">
+    <div *ngFor="let instruction of instructionGroup.instructions;let indexOfelement=index;" class="container">
       <div class="col">
         <div class="row">
           <div class="d-flex flex-row">
-            <div class="p-1 index-col"><b>{{instruction.index}}.</b></div>
+            <div class="p-1 index-col"><b>{{indexOfelement+1}}.</b></div>
             <div class="p-1">{{instruction.description}}</div>
           </div>
         </div>
         <div class="row">
           <div class="d-flex flex-row">
-            <div *ngFor="let stepTimer of instruction.stepTimers" class="padding-right-small">
+            <div *ngFor="let timer of instruction.timers" class="padding-right-small">
               <app-recipe-view-timer></app-recipe-view-timer>
             </div>
           </div>

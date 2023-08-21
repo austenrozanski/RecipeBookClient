@@ -1,8 +1,8 @@
-<div *ngFor="let section of descriptionSections" class="padding-bottom-small">
+<div *ngFor="let group of descriptionGroups" class="padding-bottom-small">
   <div class="text-subtitle-2">
-    <b>{{section.name}}</b>
+    <b>{{group.title}}</b>
   </div>
   <div class="p-1">
-    {{section.content}}
+    {{group.body}}
   </div>
 </div>

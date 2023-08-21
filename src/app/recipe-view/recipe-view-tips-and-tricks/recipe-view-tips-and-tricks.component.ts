@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-recipe-view-tips-and-tricks',
@@ -6,6 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./recipe-view-tips-and-tricks.component.scss']
 })
 export class RecipeViewTipsAndTricksComponent {
+
+  @Input() tipsAndTricksGroups: any =
+    [
+      {
+        title: "",
+        body: ""
+      }
+    ];
+
   tipsAndTricksSections: any = [
     {name: "First Section", content: "test content for the first section"},
     {name: "Second Section", content: "test content for the second section"},

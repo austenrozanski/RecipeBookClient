@@ -9,15 +9,19 @@ import {Router} from "@angular/router";
 })
 export class RecipeBrowserComponent {
 
-  recipes = [
-    {name: "Grilled Cheese"},
-    {name: "test"},
-    {name: "test"},
-    {name: "test"},
-  ]
+  recipes : any;
   constructor(private http: HttpClient, private router: Router) {}
-  onClicked() {
-    this.router.navigate(['/recipe-view']);
+
+  ngOnInit(): void {
+    this.http.get('http://localhost:5114/api/recipes').subscribe({
+      next: response => this.recipes = response,
+      error: err => console.log(err),
+      complete: () => console.log('Request completed')
+    });
+  }
+
+  onRecipeClicked(recipeId: number) {
+    this.router.navigate(['/recipe-view/' + recipeId]);
   }
 
   onClickedNewRecipe() {

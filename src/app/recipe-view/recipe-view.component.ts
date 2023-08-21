@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-recipe-view',
@@ -8,74 +9,82 @@ import {Router} from "@angular/router";
   styleUrls: ['./recipe-view.component.scss']
 })
 export class RecipeViewComponent {
-  title = 'recipe-book-client';
-  users: any;
 
-  recipeName = "Grilled Cheese"
-  prepTimeInSeconds = 10
-  cookTimeInSeconds = 10
-  totalTimeInSeconds = 10
-  author = "Austen Rozanski"
-  link = ""
+  private routeSub: Subscription;
 
-  ingredientSections: any = [
-    {name: "Sandwich", ingredients: [
-        {name: "Bread", quantity: "4", quantityType: "slices"},
-        {name: "Butter", quantity: "2", quantityType: "tbsp"},
-        {name: "American Cheese", quantity: "4", quantityType: "slices"},
-      ]},
-    {name: "Sauce", ingredients: [
-        {name: "Bread", quantity: "4", quantityType: "slices"},
-        {name: "Butter", quantity: "2", quantityType: "tbsp"},
-        {name: "American Cheese", quantity: "4", quantityType: "slices"},
-      ]},
-  ];
+  recipe: any = {
+    author: "",
+    sourceUrl: "",
+    prepTimeSeconds: 0,
+    cookTimeSeconds: 0,
+    totalTimeSeconds: 0,
+    ingredientGroups: [
+      {
+        name: "",
+        ingredients: [
+          {
+            name: "",
+            quantity: null,
+            quantityType: ""
+          }
+        ]
+      }
+    ],
+    instructionGroups: [
+      {
+        name: "",
+        instructions: [
+          {
+            description: "",
+            timers: [
+              {
+                name: "",
+                totalTimeInSeconds: 0
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    descriptionGroups: [
+      {
+        title: "",
+        body: ""
+      }
+    ],
+    tipsAndTricksGroups: [
+      {
+        title: "",
+        body: ""
+      }
+    ]
+  }
 
-  instructionSections: any = [
-    {name: "Sandwich", instructions: [
-        {index: 1, description: "Melt butter in microwave."},
-        {index: 2, description: "While melting butter, heat pan over stove on medium heat."},
-        {index: 3, description: "Brush bread slices with butter."},
-        {index: 4, description: "Place 2 slices of cheese between 2 slices of bread and put into pan."},
-        {index: 5, description: "Flip after 2 minutes or when golden brown."},
-        {index: 6, description: "Cook for 2 more minutes and remove from pan."},
-      ]},
-    {name: "Sauce", instructions: [
-        {index: 1, description: "Melt butter in microwave."},
-        {index: 2, description: "While melting butter, heat pan over stove on medium heat."},
-        {index: 3, description: "Brush bread slices with butter."},
-        {index: 4, description: "Place 2 slices of cheese between 2 slices of bread and put into pan."},
-        {index: 5, description: "Flip after 2 minutes or when golden brown.", stepTimers: [
-            {name: "test", timeInSeconds: 10},
-            {name: "test2", timeInSeconds: 20}
-          ]},
-        {index: 6, description: "Cook for 2 more minutes and remove from pan."},
-      ]},
-  ];
+  instructionGroupsWithTimers : any = [
 
-  tipsAndTricksSections: any = [
-    {name: "First Section", content: "test content for the first section"},
-    {name: "Second Section", content: "test content for the second section"},
   ]
 
-  descriptionSections: any = [
-    {name: "First Section", content: "test content for the first section"},
-    {name: "Second Section", content: "test content for the second section"},
-  ]
-
-  reviewScore = 4.5
-  reviews: any = [
-    {score: 4, review: "pretty good"},
-    {score: 5, review: "really good"},
-  ]
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.http.get('http://localhost:5114/api/users').subscribe({
-      next: response => this.users = response,
-      error: err => console.log(err),
-      complete: () => console.log('Request completed')
+    this.routeSub = this.route.params.subscribe(params => {
+
+      this.http.get('http://localhost:5114/api/recipes/' + params['id']).subscribe({
+        next: response => this.recipe = response,
+        error: err => console.log(err),
+        complete: () => {
+          console.log('Request completed');
+          console.log(this.recipe);
+        }
+      });
+
+      console.log(params) //log the entire params object
+      console.log(params['id']) //log the value of id
     });
+  }
+
+  ngOnDestroy() {
+    this.routeSub.unsubscribe();
   }
 
   onClicked() {
